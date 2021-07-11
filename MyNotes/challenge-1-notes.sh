@@ -70,19 +70,19 @@ docker logs dataload
 
 # BUILD the IMAGES locally prior to running them.
 # make sure you are in correct SOURCE dir
-docker image build -t tripinsights/poi:1.0 -f Dockerfile .
+docker image build -t tripinsights/poi:1.0  .
 
 # make sure you are in correct SOURCE dir
-docker image build -t tripinsights/trips:1.0 -f Dockerfile .
+docker image build -t tripinsights/trips:1.0  .
 
 # make sure you are in correct SOURCE dir
-docker image build -t tripinsights/tripviewer:1.0 -f Dockerfile .
+docker image build -t tripinsights/tripviewer:1.0 .
 
 # make sure you are in correct SOURCE dir
-docker image build -t tripinsights/user-java:1.0 -f Dockerfile .
+docker image build -t tripinsights/user-java:1.0 .
 
 # make sure you are in correct SOURCE dir
-docker image build -t tripinsights/userprofile:1.0 -f Dockerfile .
+docker image build -t tripinsights/userprofile:1.0 .
 docker images
 
 # once data is loaded into the sql DB, run POI
