@@ -14,7 +14,7 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/src/user-java" -f  "src/poi/Dockerfile" -t acrhackfestaqakslab.azurecr.io/user-java:${{ github.sha }} --label dockerfile-path=src/user-java/Dockerfile
+        docker build "$GITHUB_WORKSPACE/src/user-java" -f  "src/user-java/Dockerfile" -t acrhackfestaqakslab.azurecr.io/user-java:${{ github.sha }} --label dockerfile-path=src/user-java/Dockerfile
         docker push acrhackfestaqakslab.azurecr.io/user-java:${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
