@@ -44,6 +44,6 @@ jobs:
         manifests: |
           yaml-files/poi.yaml
         images: |
-          acrhackfestaqakslab.azurecr.io/aksaqakslab:${{ github.sha }}
+          acrhackfestaqakslab.azurecr.io/poi:${{ github.sha }}
         imagepullsecrets: |
           aksaqakslabdockerauth

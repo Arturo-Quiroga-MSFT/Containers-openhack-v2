@@ -16,7 +16,7 @@ spec:
         app: poi
     spec:
       containers:
-      - image: acrhackfestaqakslab.azurecr.io/poi:${{ github.sha }}
+      - image: acrhackfestaqakslab.azurecr.io/poi:
         imagePullPolicy: Always
         name: poi
         livenessProbe:
