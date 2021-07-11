@@ -51,7 +51,7 @@ ENV SQL_USER="sqladminiVm3029" \
     SQL_DBNAME="mydrivingDB" \
     WEB_PORT=80 \
     WEB_SERVER_BASE_URI="http://0.0.0.0" \
-    ASPNETCORE_ENVIRONMENT="Development" \
+    ASPNETCORE_ENVIRONMENT="Production" \
     CONFIG_FILES_PATH="/secrets"
 
 # Metadata as defined in OCI image spec annotations - https://github.com/opencontainers/image-spec/blob/master/annotations.md
