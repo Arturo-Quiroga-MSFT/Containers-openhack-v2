@@ -1,6 +1,7 @@
 on: [push]
 jobs:
   build:
+    name: Build application
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -15,13 +16,7 @@ jobs:
       id: build-image
       run: |
         docker build "$GITHUB_WORKSPACE/src/poi" -f  "src/poi/Dockerfile" -t acrhackfestaqakslab.azurecr.io/poi:${{ github.sha }} --label dockerfile-path=src/poi/Dockerfile
-        docker push acrhackfestaqakslab.azurecr.io/poi:${{ github.sha }}
-    
-    - uses: azure/k8s-set-context@v1
-      with:
-         kubeconfig: ${{ secrets.aks_aksaqakslab_kubeConfig }}
-      id: login
-    
+        docker push acrhackfestaqakslab.azurecr.io/poi:${{ github.sha }} 
 
   deploy:
     name: Deploy application to AKS
@@ -29,7 +24,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    
+
+    - uses: azure/k8s-set-context@v1
+      with:
+         kubeconfig: ${{ secrets.aks_aksaqakslab_kubeConfig }}
+      id: login
+
+
     - name: Create namespace
       run: |
         namespacePresent=`kubectl get namespace | grep api | wc -l`
