@@ -1,6 +1,6 @@
 on: [push]
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -21,6 +21,14 @@ jobs:
       with:
          kubeconfig: ${{ secrets.aks_aksaqakslab_kubeConfig }}
       id: login
+    
+
+  deploy:
+    name: Deploy application to AKS
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
     
     - name: Create namespace
       run: |
