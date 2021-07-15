@@ -7,8 +7,7 @@ metadata:
   namespace: api
 spec:
   rules:
-  - host: aksaqaksla-aks-rg-aqakslab-c11348-d8ccbbbf.hcp.canadacentral.azmk8s.io
-    http:
+  - http:
       paths:
       - backend:
           serviceName: poi
