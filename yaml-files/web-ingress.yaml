@@ -7,9 +7,18 @@ metadata:
   namespace: web
 spec:
   rules:
-  - http:
+  - host: aksaqaksla-aks-rg-aqakslab-c11348-d8ccbbbf.hcp.canadacentral.azmk8s.io
+    http:
       paths:
       - backend:
           serviceName: tripviewer
           servicePort: 80
         path: /
+      - backend:
+          serviceName: tripviewer
+          servicePort: 80
+        path: /UserProfile
+      - backend:
+          serviceName: tripviewer
+          servicePort: 80
+        path: /Trips
