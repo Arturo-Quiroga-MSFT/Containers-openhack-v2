@@ -25,9 +25,9 @@ spec:
             protocol: TCP
         env:
           - name: USERPROFILE_API_ENDPOINT
-            value: "http://aq-openhack-ingress.canadacentral.cloudapp.azure.com/Userprofile"
+            value: "http://userprofile.api.svc.cluster.local"
           - name: TRIPS_API_ENDPOINT
-            value: "http://aq-openhack-ingress.canadacentral.cloudapp.azure.com/Trip"
+            value: "http://trips.api.svc.cluster.local"
           - name: BING_MAPS_KEY
             value: "a6bZ_CmPXN8oGUSt3JiFB3fYuFk32btHimsglAua1FLR"
 ---
