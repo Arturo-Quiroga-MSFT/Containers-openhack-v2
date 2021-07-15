@@ -25,9 +25,9 @@ spec:
             protocol: TCP
         env:
           - name: USERPROFILE_API_ENDPOINT
-            value: "http://userprofile.api.svc.cluster.local"
+            value: "http://userprofile.api.svc.cluster.local:80"
           - name: TRIPS_API_ENDPOINT
-            value: "http://trips.api.svc.cluster.local"
+            value: "http://trips.api.svc.cluster.local:80"
           - name: BING_MAPS_KEY
             value: "a6bZ_CmPXN8oGUSt3JiFB3fYuFk32btHimsglAua1FLR"
 ---
