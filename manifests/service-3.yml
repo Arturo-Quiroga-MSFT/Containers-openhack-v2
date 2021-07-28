@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "aqakscluster-9d9b"
+    labels:
+        app: "aqakscluster-9d9b"
+spec:
+    type: ClusterIP
+    ports:
+    - port: 82
+      targetPort: 82
+      protocol: TCP
+      name: http
+    selector:
+        app: "aqakscluster-9d9b"
