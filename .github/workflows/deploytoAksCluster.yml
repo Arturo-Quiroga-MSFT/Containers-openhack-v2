@@ -1,0 +1,51 @@
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    
+    - uses: azure/docker-login@v1
+      with:
+        login-server: aqaksacr.azurecr.io
+        username: ${{ secrets.acr_aqaksacr_username }}
+        password: ${{ secrets.acr_aqaksacr_password }}
+    
+    - name: Build and push image to ACR
+      id: build-image
+      run: |
+        docker build "$GITHUB_WORKSPACE/src/userprofile" -f  "src/userprofile/Dockerfile" -t aqaksacr.azurecr.io/aqakscluster:${{ github.sha }} --label dockerfile-path=src/userprofile/Dockerfile
+        docker push aqaksacr.azurecr.io/aqakscluster:${{ github.sha }}
+    
+    - uses: azure/k8s-set-context@v1
+      with:
+         kubeconfig: ${{ secrets.aks_aqakscluster_kubeConfig }}
+      id: login
+    
+    - name: Create namespace
+      run: |
+        namespacePresent=`kubectl get namespace | grep hackapi | wc -l`
+        if [ $namespacePresent -eq 0 ]
+        then
+            echo `kubectl create namespace hackapi`
+        fi
+
+    - uses: azure/k8s-create-secret@v1
+      with:
+        namespace: hackapi
+        container-registry-url: aqaksacr.azurecr.io
+        container-registry-username: ${{ secrets.acr_aqaksacr_username }}
+        container-registry-password: ${{ secrets.acr_aqaksacr_password }}
+        secret-name: aqaksclusterdockerauth
+       
+    - uses: azure/k8s-deploy@v1.2
+      with:
+        namespace: hackapi
+        manifests: |
+          manifests/deployment-3.yml
+          manifests/service-3.yml
+          manifests/ingress-3.yml
+        images: |
+          aqaksacr.azurecr.io/aqakscluster:${{ github.sha }}
+        imagepullsecrets: |
+          aqaksclusterdockerauth
