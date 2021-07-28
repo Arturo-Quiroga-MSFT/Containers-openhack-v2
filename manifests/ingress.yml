@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "aqakscluster-03d5"
+    labels:
+        app: "aqakscluster-03d5"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: hackapi-aqakscluster-03d5.4a680e702b4f4f89ac6e.canadacentral.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "aqakscluster-03d5"
+                servicePort: 80
