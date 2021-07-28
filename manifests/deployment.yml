@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: "aqakscluster-03d5"
-          image: "aqaksacr.azurecr.io/aqakscluster"
+          image: "aqaksacr.azurecr.io/poi"
           ports:
           - containerPort: 80
