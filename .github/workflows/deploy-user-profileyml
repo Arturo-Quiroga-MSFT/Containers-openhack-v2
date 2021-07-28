@@ -14,8 +14,8 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/src/userprofile" -f  "src/userprofile/Dockerfile" -t aqaksacr.azurecr.io/aqakscluster:${{ github.sha }} --label dockerfile-path=src/userprofile/Dockerfile
-        docker push aqaksacr.azurecr.io/aqakscluster:${{ github.sha }}
+        docker build "$GITHUB_WORKSPACE/src/userprofile" -f  "src/userprofile/Dockerfile" -t aqaksacr.azurecr.io/user-profile:${{ github.sha }} --label dockerfile-path=src/userprofile/Dockerfile
+        docker push aqaksacr.azurecr.io/user-profile:${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
       with:
@@ -46,6 +46,6 @@ jobs:
           manifests/service-3.yml
           manifests/ingress-3.yml
         images: |
-          aqaksacr.azurecr.io/aqakscluster:${{ github.sha }}
+          aqaksacr.azurecr.io/user-profile:${{ github.sha }}
         imagepullsecrets: |
           aqaksclusterdockerauth
