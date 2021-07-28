@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-    name: "aqakscluster-84bd"
+    name: "trips"
     labels:
-        app: "aqakscluster-84bd"
+        app: "trips"
     annotations:
         kubernetes.io/ingress.class: addon-http-application-routing
 spec:
@@ -13,5 +13,5 @@ spec:
             paths:
             - path: /
               backend:
-                serviceName: "aqakscluster-84bd"
+                serviceName: "trips"
                 servicePort: 80

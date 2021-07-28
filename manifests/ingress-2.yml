@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-    name: "aqakscluster-b497"
+    name: "user-java"
     labels:
-        app: "aqakscluster-b497"
+        app: "user-java"
     annotations:
         kubernetes.io/ingress.class: addon-http-application-routing
 spec:
@@ -13,5 +13,5 @@ spec:
             paths:
             - path: /
               backend:
-                serviceName: "aqakscluster-b497"
+                serviceName: "user-java"
                 servicePort: 8080

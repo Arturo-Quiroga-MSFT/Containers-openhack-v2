@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: "aqakscluster-03d5"
+    name: "poi"
     labels:
-        app: "aqakscluster-03d5"
+        app: "poi"
 spec:
     type: ClusterIP
     ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
     selector:
-        app: "aqakscluster-03d5"
+        app: "poi"
