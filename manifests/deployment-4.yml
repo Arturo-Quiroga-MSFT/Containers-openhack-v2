@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: "aqakscluster-2587"
+  name: "tripviewer"
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: "aqakscluster-2587"
+      app: "tripviewer"
   template:
     metadata:
       labels:
-        app: "aqakscluster-2587"
+        app: "tripviewer"
     spec:
       containers:
-        - name: "aqakscluster-2587"
-          image: "aqaksacr.azurecr.io/aqakscluster"
+        - name: "tripviewer"
+          image: "aqaksacr.azurecr.io/tripviewer"
           ports:
           - containerPort: 88
