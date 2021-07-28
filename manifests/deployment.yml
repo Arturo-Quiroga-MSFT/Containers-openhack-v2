@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: "aqakscluster-03d5"
+  name: "poi"
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: "aqakscluster-03d5"
+      app: "poi"
   template:
     metadata:
       labels:
-        app: "aqakscluster-03d5"
+        app: "poi"
     spec:
       containers:
-        - name: "aqakscluster-03d5"
+        - name: "poi"
           image: "aqaksacr.azurecr.io/poi"
           ports:
           - containerPort: 80
