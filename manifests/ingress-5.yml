@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "aqakscluster-7bc6"
+    labels:
+        app: "aqakscluster-7bc6"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: hack-web-aqakscluster-7bc6.4a680e702b4f4f89ac6e.canadacentral.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "aqakscluster-7bc6"
+                servicePort: 88
