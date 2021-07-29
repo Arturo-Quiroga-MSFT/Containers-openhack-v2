@@ -14,8 +14,8 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/src/tripviewer" -f  "src/tripviewer/Dockerfile" -t aqaksacr.azurecr.io/aqakscluster:${{ github.sha }} --label dockerfile-path=src/tripviewer/Dockerfile
-        docker push aqaksacr.azurecr.io/aqakscluster:${{ github.sha }}
+        docker build "$GITHUB_WORKSPACE/charts/tripviewer" -f  "charts/tripviewer/Dockerfile" -t aqaksacr.azurecr.io/tripviewer:${{ github.sha }} --label dockerfile-path=charts/tripviewer/Dockerfile
+        docker push aqaksacr.azurecr.io/tripviewer:${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
       with:
@@ -38,14 +38,28 @@ jobs:
         container-registry-password: ${{ secrets.acr_aqaksacr_password }}
         secret-name: aqaksclusterdockerauth
        
+    - uses: azure/k8s-bake@v1
+      with:
+        renderEngine: 'helm'
+        helmChart: charts/tripviewer/helm
+        releaseName: 'aks-helm-release'
+        helm-version: 'latest' 
+        silent: 'false'
+        overrideFiles: |
+          
+        overrides: |
+          replicas:2
+          image.repository:aqaksacr.azurecr.io/tripviewer
+          image.tag:${{ github.sha }}
+          imagePullSecrets:
+            -name:aqaksclusterdockerauth
+      id: bake
+
     - uses: azure/k8s-deploy@v1.2
       with:
         namespace: hack-web
-        manifests: |
-          manifests/deployment-4.yml
-          manifests/service-4.yml
-          manifests/ingress-4.yml
+        manifests: ${{ steps.bake.outputs.manifestsBundle }}
         images: |
-          aqaksacr.azurecr.io/aqakscluster:${{ github.sha }}
+          aqaksacr.azurecr.io/tripviewer:${{ github.sha }}
         imagepullsecrets: |
           aqaksclusterdockerauth

@@ -17,9 +17,9 @@ ARG IMAGE_SOURCE_REVISION
 
 ENV PORT="80" \
     CONFIG_FILES_PATH="/secrets" \
-    SQL_USER="sqladminiVm3029" \
-    SQL_PASSWORD="PrvXhpjYKpU4" \
-    SQL_SERVER="sqlserverivm3029.database.windows.net" \
+    SQL_USER="sqladmindKo7020" \
+    SQL_PASSWORD="oB1lh7Oz8" \
+    SQL_SERVER="sqlserverdko7020.database.windows.net" \
     SQL_DBNAME="mydrivingDB" \
     OPENAPI_DOCS_URI="http://changeme" \
     DEBUG_LOGGING="false"

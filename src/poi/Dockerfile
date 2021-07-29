@@ -45,9 +45,9 @@ ARG IMAGE_CREATE_DATE
 ARG IMAGE_VERSION
 ARG IMAGE_SOURCE_REVISION
 
-ENV SQL_USER="sqladminiVm3029" \
-    SQL_PASSWORD="PrvXhpjYKpU4" \
-    SQL_SERVER="sqlserverivm3029.database.windows.net" \
+ENV SQL_USER="sqladmindKo7020" \
+    SQL_PASSWORD="oB1lh7Oz8" \
+    SQL_SERVER="sqlserverdko7020.database.windows.net" \
     SQL_DBNAME="mydrivingDB" \
     WEB_PORT=80 \
     WEB_SERVER_BASE_URI="http://0.0.0.0" \

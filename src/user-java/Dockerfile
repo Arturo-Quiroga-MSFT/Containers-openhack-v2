@@ -12,9 +12,9 @@ ARG IMAGE_VERSION
 ARG IMAGE_SOURCE_REVISION
 
 ENV PORT=80 \
-    SQL_USER="sqladminiVm3029" \
-    SQL_PASSWORD="PrvXhpjYKpU4" \
-    SQL_SERVER="sqlserverivm3029.database.windows.net" \
+    SQL_USER="sqladmindKo7020" \
+    SQL_PASSWORD="oB1lh7Oz8" \
+    SQL_SERVER="sqlserverdko7020.database.windows.net" \
     SQL_DBNAME="mydrivingDB"
 
 # Metadata as defined in OCI image spec annotations - https://github.com/opencontainers/image-spec/blob/master/annotations.md
