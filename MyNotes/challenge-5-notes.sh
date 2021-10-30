@@ -110,6 +110,7 @@ kubectl create namespace monitoring
 RELEASE_NAME=kube-prometheus
 helm install $RELEASE_NAME prometheus-community/kube-prometheus-stack -n monitoring
 
+
 ###########################################################################
 # BELOW ARE OLD INSTRUCTIONS for the PREVIOUS WAY OF DEPLOYING
 # PROMETHEUS AND GRAFANA SEPARATELY, LEAVING THEM HERE FOR COMPLETENESS

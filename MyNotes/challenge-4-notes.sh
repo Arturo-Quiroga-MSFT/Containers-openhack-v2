@@ -29,6 +29,10 @@ az role assignment create \
     --role "Azure Kubernetes Service Cluster User Role" \
     --scope $AKS_ID
 
+
+
+
+
 # ***************************************************************************************
 # THIS IS THE KEYVAULT INTEGRATION part of the challenge.
 # TO DO THE NEW WAY WITH CSI_DRIVER (which is an open source project NOT supported by Azure support):
