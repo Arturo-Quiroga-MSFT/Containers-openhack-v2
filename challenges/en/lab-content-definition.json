@@ -1,0 +1,72 @@
+{
+  "Title": "microsoft-open-hack-containers-v2",
+  "Description": "This content goes in the META description tag of HTML",
+  "OverviewUrl": "Home.html",
+  "ContentVersion": "4.20",
+  "ContentPackage": {
+    "ContentItems": [
+      {
+        "Order": 1,
+        "Title": "Challenge 0: Getting Ready to Go",
+        "Description": "Get tools and resources ready to start",
+        "Url": "Challenge-0.html"
+      },
+      {
+        "Order": 2,
+        "Follows": 1,
+        "Title": "Challenge 1: But First, Containers",
+        "Description": "Build, run and test Docker containers",
+        "Url": "Challenge-1.html"
+      },
+      {
+        "Order": 3,
+        "Follows": 2,
+        "Title": "Challenge 2: Getting Ready for Orchestration ",
+        "Description": "Deploy your containers to a test cluster",
+        "Url": "Challenge-2.html"
+      },
+      {
+        "Order": 4,
+        "Follows": 3,
+        "Title": "Challenge 3: To Orchestration and Beyond",
+        "Description": "Configure an Azure Kubernetes Cluster with initial security considerations around custom VNETS and RBAC capabilities",
+        "Url": "Challenge-3.html"
+      },
+      {
+        "Order": 5,
+        "Follows": 4,
+        "Title": "Challenge 4: Putting the Pieces Together",
+        "Description": "Deploy your containers to the cluster and manage and secure your kubernetes secrets",
+        "Url": "Challenge-4.html"
+      },
+      {
+        "Order": 6,
+        "Follows": 5,
+        "Title": "Challenge 5: Wait, Whats Happening",
+        "Description": "Identify, troubleshoot, and debug issues with your cluster",
+        "Url": "Challenge-5.html"
+      },
+      {
+        "Order": 7,
+        "Follows": 6,
+        "Title": "Challenge 6: Locking it Down",
+        "Description": "Improve cluster security",
+        "Url": "Challenge-6.html"
+      },
+      {
+        "Order": 8,
+        "Follows": 7,
+        "Title": "Challenge 7: Mixed Emotions",
+        "Description": "Introduce Windows workloads to your cluster",
+        "Url": "Challenge-7.html"
+      },
+      {
+        "Order": 9,
+        "Follows": 8,
+        "Title": "Challenge 8: Doing More with Service Mesh",
+        "Description": "Deploy a service mesh to expand on previous topics",
+        "Url": "Challenge-8.html"
+      }
+    ]
+  }
+}

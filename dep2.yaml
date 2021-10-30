@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logging-test
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: logtest
+  template:
+    metadata:
+      labels:
+        app: logtest
+    spec:
+      containers:
+        - name: debian
+          image: debian:latest
+          command: ["/bin/bash"]
+          args: ["-c", 'while true; do echo {\"UserID\": 123, \"CorrelationID\": 6778, \"Message\": \"My message\"}; sleep 10; done']

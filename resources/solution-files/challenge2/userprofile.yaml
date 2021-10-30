@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: userprofile
+  labels:
+    deploy: userprofile
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: userprofile
+  template:
+    metadata:
+      labels:
+        app: userprofile
+    spec:
+      containers:
+      - image: "{{registry}}.azurecr.io/tripinsights/userprofile:1.0"
+        imagePullPolicy: Always
+        name: userprofile
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        - containerPort: 443
+          name: https
+          protocol: TCP
+        envFrom:
+        - secretRef:
+            name: sql
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: userprofile
+spec:
+  type: ClusterIP
+  selector:
+    app: userprofile
+  ports:
+  - protocol: TCP
+    name: http
+    port: 80
+    targetPort: 80
+  - protocol: TCP
+    name: https
+    port: 443
+    targetPort: 443
