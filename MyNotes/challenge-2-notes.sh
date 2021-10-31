@@ -8,7 +8,7 @@ docker build --tag "tripinsights/userprogile:1.0" .
 # PUSH APIs to ACR
 # make sure you are in correct SOURCE dir
 # example build commands to push to ACR (make sure you are in proper src subdirectory)
-ACR_NAME=registrylsi1521.azurecr.io
+ACR_NAME=registrylee9469.azurecr.io
 RES_GROUP=teamresources
 CLUSTER_NAME=myAKSCluster
 
