@@ -15507,19 +15507,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/arturito/.nuget/packages/": {}
+    "/Users/arturoquiroga/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/arturito/Projects/Containers-openhack-v2/charts/apis/poi/tests/IntegrationTests/IntegrationTests.csproj",
+      "projectUniqueName": "/Users/arturoquiroga/Projects/Containers-openhack-v2/charts/apis/poi/tests/IntegrationTests/IntegrationTests.csproj",
       "projectName": "IntegrationTests",
-      "projectPath": "/Users/arturito/Projects/Containers-openhack-v2/charts/apis/poi/tests/IntegrationTests/IntegrationTests.csproj",
-      "packagesPath": "/Users/arturito/.nuget/packages/",
-      "outputPath": "/Users/arturito/Projects/Containers-openhack-v2/charts/apis/poi/tests/IntegrationTests/obj/",
+      "projectPath": "/Users/arturoquiroga/Projects/Containers-openhack-v2/charts/apis/poi/tests/IntegrationTests/IntegrationTests.csproj",
+      "packagesPath": "/Users/arturoquiroga/.nuget/packages/",
+      "outputPath": "/Users/arturoquiroga/Projects/Containers-openhack-v2/charts/apis/poi/tests/IntegrationTests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/arturito/.nuget/NuGet/NuGet.Config"
+        "/Users/arturoquiroga/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -15531,8 +15531,8 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "/Users/arturito/Projects/Containers-openhack-v2/charts/apis/poi/web/poi.csproj": {
-              "projectPath": "/Users/arturito/Projects/Containers-openhack-v2/charts/apis/poi/web/poi.csproj"
+            "/Users/arturoquiroga/Projects/Containers-openhack-v2/charts/apis/poi/web/poi.csproj": {
+              "projectPath": "/Users/arturoquiroga/Projects/Containers-openhack-v2/charts/apis/poi/web/poi.csproj"
             }
           }
         }
@@ -15590,7 +15590,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
       }
     }
   }

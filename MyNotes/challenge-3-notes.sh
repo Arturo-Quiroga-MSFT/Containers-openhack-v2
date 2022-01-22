@@ -9,10 +9,9 @@ VNET_NAME=vnet
 SUBNET_NAME=AKSSubnet
 WORKSPACE=aq-logsopenhack
 CLUSTERNAME=myAKSCluster
-LOCATION=canadacentral
-ACRNAME=registrybkp3109
-CLUSTER_ADMINS_GRP_ID=3129fcf8-aa5e-4d60-ac63-c3a819714c19
-SUB_ID=28c473e4-ad30-46cd-b669-f92768ef2cc4
+LOCATION=eastus
+ACRNAME=registrylee9469
+SUB_ID=c11348eb-0f8f-46cd-8e7d-70a4893d2817
 VNET_ID=$(az network vnet show -g $RESOURCE_GROUP -n $VNET_NAME --query id -o tsv)
 SUBNET_ID=$(az network vnet subnet show -g $RESOURCE_GROUP --vnet-name $VNET_NAME -n  $SUBNET_NAME --query id -o tsv)
 SUBNET_IPSPACE=$(az network vnet subnet show -g $RESOURCE_GROUP --vnet-name $VNET_NAME -n  $SUBNET_NAME --query addressPrefix -o tsv)
@@ -25,7 +24,7 @@ az aks create \
     --name $CLUSTERNAME \
     --node-count 3 \
     --nodepool-name linuxpool1 \
-    --kubernetes-version 1.18.8 \
+    --kubernetes-version 1.21.2 \
     --location=$LOCATION \
     --load-balancer-sku Standard \
     --network-plugin azure \
@@ -39,15 +38,15 @@ az aks create \
     --enable-cluster-autoscaler \
     --max-count 10 \
     --min-count 3 \
-    --max-pods 100 \
+    --max-pods 150 \
     --enable-managed-identity \
     --enable-aad \
-    --aad-admin-group-object-ids $CLUSTER_ADMINS_GRP_ID \
     --aad-tenant-id $TENANT_ID \
     --enable-addons monitoring \
     --attach-acr $ACRNAME \
     --workspace-resource-id $LOGSPACE_ID
 
+# you could also add this --aad-admin-group-object-ids $CLUSTER_ADMINS_GRP_ID \
 
 # FYI you could enable acr in an existing cluster.
 https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration#configure-acr-integration-for-existing-aks-clusters

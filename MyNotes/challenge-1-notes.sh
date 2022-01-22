@@ -28,7 +28,7 @@ sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=$sqlpassword" \
    -d \
    -h $sqlserver \
    --network aq-network \
-   mcr.microsoft.com/mssql/server:2017-latest
+   mcr.microsoft.com/mssql/server:2019-latest
 
 # make modifications to the sql server container
 sudo docker exec -it $sqlserver /opt/mssql-tools/bin/sqlcmd \
