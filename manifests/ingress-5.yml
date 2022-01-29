@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "myakscluster-1f9f"
+    labels:
+        app: "myakscluster-1f9f"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: openhack-api-myakscluster-1f9f.3ea42edc899c4554a51a.canadacentral.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "myakscluster-1f9f"
+                servicePort: 80
