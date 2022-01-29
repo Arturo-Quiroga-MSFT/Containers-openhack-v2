@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = UnitTests
+build_property.ProjectDir = /Users/arturoquiroga/Projects/Containers-openhack-v2/charts/apis/poi/tests/UnitTests/
