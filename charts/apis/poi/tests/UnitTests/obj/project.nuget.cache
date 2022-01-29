@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Z880Jrmdv5kCL542XqCIDkA0iA/WhYhh8tijtjmyhRpGKwnwDvoqhYjgw6lYGx6KxmIuFVqlOEfajT5i52MyLQ==",
+  "dgSpecHash": "bLmIsbMKquPejteQPJfYa1pu4B+GOlJFaWB1Lg4cSg+QTqgv6cfAHA5fHvrU9CpFQG9KUn/22cZ4FAdl0MC7vA==",
   "success": true,
   "projectFilePath": "/Users/arturoquiroga/Projects/Containers-openhack-v2/charts/apis/poi/tests/UnitTests/UnitTests.csproj",
   "expectedPackageFiles": [
