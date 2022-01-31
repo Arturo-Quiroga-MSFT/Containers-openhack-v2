@@ -19,8 +19,8 @@ API NAMESPACE = POI, TRIPS, USER_JAVA, USER-PROFILE
 WEB NAMESPACE = TRIPVIEWER
 
 # Run the SQL SERVER container locally
-sqlpassword=localtestpw123@
-sqlserver=aqsqlsvr1
+sqlpassword="localtestpw123@"
+sqlserver="aqsqlsvr1"
 docker network create aq-network -d bridge
 
 sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=$sqlpassword" \
