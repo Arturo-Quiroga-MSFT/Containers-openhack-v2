@@ -3,10 +3,10 @@
 # Script requires being logged in to correct Azure account
 
 # SQL credentials
-export SQL_PASSWORD=CHANGEME
+export SQL_PASSWORD="!super.password.123"
 
 # ACR connection details
-export ACR=CHANGEME
+export ACR=registryhie9743
 export ACR_URL=$ACR.azurecr.io
 
 # docker network name

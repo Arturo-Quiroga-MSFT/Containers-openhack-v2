@@ -11,7 +11,7 @@ https://github.com/microsoft/OpenHack/tree/main/byos/containers
 POI = DOCKERFILE_3
 TRIPS = DOCKERFILE_4
 TRIPVIEWER = DOCKERFILE_1
-USER-PROFILE-JAVA = DOCKERFILE_5
+USER-PROFILE-JAVA = DOCKERFILE_0
 USER-PROFILE = DOCKERFILE_2
 
 # namespaces in the cluster
